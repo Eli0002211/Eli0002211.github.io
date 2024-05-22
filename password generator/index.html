@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!--Password generator-->
+    <div class="password-gen input-form-thin">
+        <div>
+            <h1>Password Generator</h1>
+        </div>
+        <div> 
+            <h2>
+                <select>
+                    <div class="see-through">
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                    </div>
+                </select> Insurer password
+            </h2>
+            <button id="insurer-password-button" onclick="insurerPassword()" class="create-button">Let's Go</button>
+        </div>
+        <div>
+            <input id="insurer-password">
+        </div>
+        <div>
+            <h2>Deskphone password</h2>
+            <button id="deskphone-password-button" onclick="deskPhonePassword()" class="create-button">Let's Go</button>
+        </div>
+        <div>
+            <input id="deskphone-password">
+        </div>
+    </div>
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="index.js"></script>
+</html>
