@@ -1,7 +1,8 @@
 body {
-    background-image: radial-gradient(circle at top left,rgba(255, 0, 255, 0.581),rgba(4, 8, 246, 0.537));
+    background-color: rgba(12, 227, 191, 0.608);
     height: 100vh;
     font-family: Lato, sans-serif !important;
+    align-content: center;
 }
 
 .input-form-thin {
@@ -12,8 +13,7 @@ body {
     padding: 10px;
     max-width: 400px;
     margin: auto;
-    margin-top: 40px !important;
-    background-image: radial-gradient(circle at top left,#fcfbfc70,#7800f97d,#e900f57a);
+    background-image: radial-gradient(circle at top left,#c9e6de89,#12d8e67b,#0d8d6b82);
     border-radius: 20px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
 }
@@ -23,7 +23,7 @@ input, select {
     height: 30px;
     width: 300px;
     border-radius: 10px;
-    background-color: rgba(191, 221, 248, 0.49);
+    background-color: rgba(208, 229, 248, 0.4);
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8);
     font-family: Lato, sans-serif !important;
     text-align: center;
@@ -38,35 +38,52 @@ select {
     height: 35px;
     width: 300px;
     border-radius: 10px;
-    background-image: radial-gradient(circle at top left,#fcfbfc41,#7800f941,#0021f535);
-    background-color: rgba(0, 193, 193, 0.54);
+    background-image: radial-gradient(at top left,#fffcfc41,#02f20641,#2612c150);
+    background-color: rgb(2, 255, 166);
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8);
     font-family: Lato, sans-serif !important;
     font-size: 30px;
 }
 
 .create-button:hover {
-    background-image: radial-gradient(circle at top left,#5953f575,#0021f5a2);
+    background-image: radial-gradient(circle at top left,#05410575,#295a5da2);
 }
 
-.dark-mode {
-    background-image: none;
-    background-color: black;
-    color: white;
+@media(max-width:450px) {
+    .input-form-thin {
+        width: auto;
+        min-width: 190px;
+    }
+    .create-button {
+        width: 190px;
+        font-size: 20px;
+    }
+    input {
+        width: 190px !important;
+    }
 }
-.white-text {
-    color: white;
-}
-#light-button {
-    background-color: black;
-    color: white;
-}
-.x-button {
-    color: black;
-    background-color: rgba(191, 221, 248, 0.345);
-    float: left;
-    border-radius: 50%;
-    border: none;
-    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.8);
-    font-weight: 900;
+
+@media(min-width:1200px) {
+    .input-form-thin {
+        max-width: 500px;
+        height: 700px;
+        font-size: 25px;
+        padding: 20px;
+    }
+    .create-button {
+        width: 400px;
+        font-size: 40px;
+        height: 50px;
+        border-radius: 20px;
+    }
+    input {
+        width: 400px !important;
+        height: 50px;
+        border-radius: 20px;
+    }
+    select {
+        font-size: 30px;
+        height: 40px;
+    }
+
 }
