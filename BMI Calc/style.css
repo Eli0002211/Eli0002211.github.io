@@ -20,7 +20,7 @@ body {
     margin: auto;
     border-radius: 20px;
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.858);
-    padding: 10px 10px 0px 10px;
+    padding: 20px;
     text-align: center;
 }
 .bmi-calc input {
@@ -56,8 +56,11 @@ body {
 }
 .bmi-calc select {
     float: left;
+    font-size: 20px;
     font-family: Lato, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
     border-radius: 5px;
+    width: 100px;
+    height: 30px;
     border: none;
     background-color: rgba(0, 0, 255, 0.073);
     background-image:radial-gradient(at top left, #ffffff7a,#005eff88) !important;
@@ -68,10 +71,10 @@ body {
 #clear-all-button {
     float: right;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     padding: none;
     width: 100px !important;
-    height: 25px !important;
+    height: 30px !important;
     background-color: rgba(61, 61, 249, 0.2) !important;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.858) !important;
 }
@@ -89,6 +92,9 @@ label.metric {
 .col-span-2 {
     grid-column: span 2;
 }
+select:hover,button:hover,#clear-all-button:hover {
+    background-color: rgba(0, 0, 255, 0.5) !important;
+}
 
 @media(max-width: 550px){
     .bmi-calc{
@@ -104,5 +110,14 @@ label.metric {
     }
     #bmi-input {
         width: 140px !important;
+    }
+}
+@media(min-width: 551px) and (max-width: 1600px){
+    .bmi-calc{
+        font-size: 17px !important;
+    }
+    .bmi-calc select, #clear-all-button {
+        height: 25px !important;
+        font-size: 15px;
     }
 }
