@@ -95,9 +95,9 @@ function adjustFooter() {
 $(document).ready(function() {
     adjustFooter();
 });
-$(window).resize(function() {
-    adjustFooter();
-});
+// $(window).resize(function() {
+//     adjustFooter();
+// });
 
 // ---------------------------------------Video Header Animations---------------------------------//
 $(".header h1 div").height($(".header h1").height());
@@ -241,10 +241,10 @@ $(window).scroll(debounce(function() {
     };
 
     // animate opacity change of features on slide 1
-    var opacity = scroll /1000
-    $('.slide-1 div ul li').animate({
-        opacity: opacity
-    },50);
+    // var opacity = scroll /1000
+    // $('.slide-1 div ul li').animate({
+    //     opacity: opacity
+    // },50);
 
     //animate fill outlined text
     var divider = parseInt($('.slide-1 h3').width()) / 30;
@@ -287,7 +287,7 @@ $(window).scroll(debounce(function() {
     });
     
 
-}, 200));
+}, 100));
   
 //-----------------------------------------------timer--------------------------------------------//
 $(document).ready(function () {

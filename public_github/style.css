@@ -20,6 +20,7 @@
 }
 html {
     background-color: white;
+    max-width:   100%;
 }
 .policy-bg {
     position: absolute;
@@ -105,7 +106,7 @@ body {
     padding: 1%;
     border-style: double;
     border-radius: 20px;
-    opacity: 0;
+    opacity: 1;
 }
 .slide-1 div ul li:nth-child(5n+1) {
     border-color: #FEDB00;
