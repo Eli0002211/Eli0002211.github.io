@@ -80,21 +80,21 @@ function getHiddenElementHeight(selector) {
     return height; 
 }
 // ------------------------dynamic positioning of footer-------------------------------//
-function adjustFooter() {
-    var fadeDiv = $('.fade-in');
-    var fadeBottom = fadeDiv.offset().top + fadeDiv.outerHeight();
-    var footer = $('.index-footer');
-    var footerTop = footer.offset().top;
+// function adjustFooter() {
+//     var fadeDiv = $('.fade-in');
+//     var fadeBottom = fadeDiv.offset().top + fadeDiv.outerHeight();
+//     var footer = $('.index-footer');
+//     var footerTop = footer.offset().top;
 
-    footer.css('top', 4800 - (footerTop - fadeBottom));
-    if (footer.css('top') > 4800) {
-        footer.css('top', 4800)
-    };
-};
+//     footer.css('top', 4800 - (footerTop - fadeBottom));
+//     if (footer.css('top') > 4800) {
+//         footer.css('top', 4800)
+//     };
+// };
 
-$(document).ready(function() {
-    adjustFooter();
-});
+// $(document).ready(function() {
+//     adjustFooter();
+// });
 // $(window).resize(function() {
 //     adjustFooter();
 // });
