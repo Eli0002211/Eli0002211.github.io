@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: 
+
+User-agent: rogerbot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: Twitterbot
+Disallow: /
+
+Sitemap: https://www.INFERNOKARATE.com/Sitemap.xml
+
