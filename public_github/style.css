@@ -13,11 +13,11 @@
     z-index: 9999;
 }  */
 
-@media(prefers-color-scheme: light){
+/* @media(prefers-color-scheme: light){
     .loader {
         background-color: white;
     }
-}
+} */
 html {
     background-color: white;
     max-width:   100%;
@@ -34,10 +34,6 @@ body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-}
-
-html, body {
-    overflow: auto;
 }
 
 .hide {
