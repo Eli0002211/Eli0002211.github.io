@@ -407,7 +407,7 @@ footer {
     z-index: -1;
 }
 .index-footer {
-    top: 4100px;
+    top: 4000px;
 }
 footer div ul {
     display: flex;
