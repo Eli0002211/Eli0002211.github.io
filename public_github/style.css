@@ -1,6 +1,6 @@
 
 @import url('https://fonts.cdnfonts.com/css/futura-pt');
-.loader {
+/* .loader {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     z-index: 9999;
-} 
+}  */
 
 @media(prefers-color-scheme: light){
     .loader {
@@ -407,7 +407,7 @@ footer {
     z-index: -1;
 }
 .index-footer {
-    top: 4000px;
+    top: 4050px;
 }
 footer div ul {
     display: flex;
