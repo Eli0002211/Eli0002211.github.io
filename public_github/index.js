@@ -222,7 +222,7 @@ function debounce(func, wait, immediate) {
 }
 
 
-$(window).on('touchmove'(debounce(function() {
+$(window).scroll(debounce(function() {
     let colors = checkDarkMode();
     var scroll = $(window).scrollTop();
 
@@ -280,7 +280,7 @@ $(window).on('touchmove'(debounce(function() {
     });
     
 
-}, 100)));
+}, 100));
   
 //-----------------------------------------------timer--------------------------------------------//
 $(document).ready(function () {
