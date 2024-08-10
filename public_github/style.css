@@ -50,6 +50,7 @@ body {
 /* elements that slide over the background */
 .sticky { 
     position: sticky !important;
+    transform: translateZ(0);
     top: 0;
 }
 
