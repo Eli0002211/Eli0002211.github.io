@@ -71,7 +71,7 @@ html, body {
 .grid-container div {
     text-align: center;
     background-color: white;
-    position: relative;
+    position: static;
     border-radius: 10px;
 }
 .flex-container {
@@ -281,8 +281,8 @@ video {
     left: 100%;
     right: 0%;
 }
-.header h1 span {
-    position: relative;
+.header h1 span, header h2 span {
+    position: static;
 }
 
 /*------------------------------------------ contact form---------------------------------- */
