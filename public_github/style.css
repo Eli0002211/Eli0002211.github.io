@@ -71,7 +71,7 @@ html, body {
 .grid-container div {
     text-align: center;
     background-color: white;
-    position: static;
+    position: relative;
     border-radius: 10px;
 }
 .flex-container {
@@ -282,7 +282,7 @@ video {
     right: 0%;
 }
 .header h1 span, header h2 span {
-    position: static;
+    position: relative;
 }
 
 /*------------------------------------------ contact form---------------------------------- */
@@ -680,6 +680,9 @@ footer div div a:hover:nth-child(n+2)::after {
     .grid-container {
         padding: 0px;
         padding-right: 5px;
+    }
+    .navbar {
+        top: 10px;
     }
     
 }
