@@ -180,6 +180,19 @@ function debounce(func, wait, immediate) {
     };
 }
 
+let startY = 0;
+$(window).on('touchstart', function(e) {
+    startY = e.originalEvent.touches[0].pageY;
+});
+$(window).on('touchmove', function(e) {
+    let currentY = e.originalEvent.touches[0].pageY;
+    if (currentY < startY) {
+        // User is scrolling down
+        $(window).scrollTop($(window).scrollTop() + (startY - currentY));
+    }
+    startY = currentY;
+});
+
 function scroller() {
     let colors = checkDarkMode();
     var scroll = $(window).scrollTop();
