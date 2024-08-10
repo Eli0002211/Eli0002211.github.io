@@ -12,21 +12,21 @@ $(window).scroll(devTool);
 /* Laptop Size (1001-1500px) */
 /* Dektop Size (1500px-2000px) */
 
-function mediaQueryWidth(){
-    if (window.matchMedia('(max-width: 400px)').matches) {
-        return 'phone';
-    } else if (window.matchMedia('((min-width: 401px) and (max-width: 600px))').matches) {
-        return 'tablet';
-    } else if (window.matchMedia('((min-width: 601px) and (max-width: 850px))').matches){
-        return 'big tablet'
-    } else if (window.matchMedia('((min-width: 851px) and (max-width: 1000px))').matches){
-        return 'small laptop'
-    } else if (window.matchMedia('((min-width: 1001px) and (max-width: 1500px))').matches) {
-        return 'laptop';
-    } else if (window.matchMedia('((min-width: 1501px) and (max-width: 2000px))').matches) {
-        return 'desktop';
-    }
-};
+// function mediaQueryWidth(){
+//     if (window.matchMedia('(max-width: 400px)').matches) {
+//         return 'phone';
+//     } else if (window.matchMedia('((min-width: 401px) and (max-width: 600px))').matches) {
+//         return 'tablet';
+//     } else if (window.matchMedia('((min-width: 601px) and (max-width: 850px))').matches){
+//         return 'big tablet'
+//     } else if (window.matchMedia('((min-width: 851px) and (max-width: 1000px))').matches){
+//         return 'small laptop'
+//     } else if (window.matchMedia('((min-width: 1001px) and (max-width: 1500px))').matches) {
+//         return 'laptop';
+//     } else if (window.matchMedia('((min-width: 1501px) and (max-width: 2000px))').matches) {
+//         return 'desktop';
+//     }
+// };
 //--------------------------------------------Dark Mode-------------------------------------------//
 //check if dark mode is on
 function checkDarkMode() {
@@ -110,9 +110,6 @@ $(".header h2 span").hide();
 
 //-------------------------------------------Load Screen -----------------------------------------//
 $(window).on('load',function() {
-
-    $('#loader').fadeOut('slow', function() {
-        
         $(".header h1 div").animate({
             backgroundColor: '#963CBD',
             width: $(".header h1").width(),
@@ -135,7 +132,6 @@ $(window).on('load',function() {
                 width: '0px',
             }, 'slow', function(){
                 $(".header h2 span").fadeIn('slow'); 
-            });
         });
     });
 });
