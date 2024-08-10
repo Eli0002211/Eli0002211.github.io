@@ -181,65 +181,65 @@ function debounce(func, wait, immediate) {
 }
 
 
-if (window.matchMedia('(min-width: 600px)').matches) {
-    $(window).scroll(debounce(function() {
-        let colors = checkDarkMode();
-        var scroll = $(window).scrollTop();
-    
-        //fill colour of navbar
-        if (scroll > $('video').height()) {
-            $("nav").animate({
-                backgroundColor: colors.bgColor
-            });
-        } else {
-            $("nav").animate({
-                backgroundColor: 'transparent'
-            });
-        };
-    
-        //animate fill outlined text
-        var divider = parseInt($('.slide-1 h3').width()) / 30;
-        var scrollPercent = (scroll / ($(document).height() - $(window).height()) * 100);
-        var backgroundPos
-    
-        if ($('.slide-1').offset().top <= (scroll * 1.3)){
-            backgroundPos = divider - scrollPercent;
-        } else {
-            backgroundPos = 100;
-        };
-        $('.slide-1 h3').css('background-position', `${backgroundPos}%`)
-    
-        if (parseInt($('.slide-1 h3').css('background-position')) < 0) {
-            $('.slide-1 h3').css({
-                'background-image': 'none',
-                'background-color': colors.textColor
-            });
-        } else {
-            $('.slide-1 h3').css({
-                'background-color':'transparent',
-                'background-image':`linear-gradient(to right, ${colors.textColor} 50%, transparent 50%`,
-                'background-position': `${backgroundPos}%`,
-            },'slow');
-        }
-    
-        // slide divs over each other
-        $('.grid-container div:not(:nth-child(4))').each(function() {
-            if ($(window).width() <= 550) {
-                slideOffset = ($(this).offset().top + $(this).height()) * 0.8
-            } else {
-                slideOffset = $(this).offset().top
-            }
-    
-            if (scroll >= slideOffset) {
-                $(this).addClass('sticky')
-            } else if (scroll < slideOffset) {
-                $(this).removeClass('sticky')
-            }
+
+$(window).scroll(debounce(function() {
+    let colors = checkDarkMode();
+    var scroll = $(window).scrollTop();
+
+    //fill colour of navbar
+    if (scroll > $('video').height()) {
+        $("nav").animate({
+            backgroundColor: colors.bgColor
         });
-        
+    } else {
+        $("nav").animate({
+            backgroundColor: 'transparent'
+        });
+    };
+
+    //animate fill outlined text
+    var divider = parseInt($('.slide-1 h3').width()) / 30;
+    var scrollPercent = (scroll / ($(document).height() - $(window).height()) * 100);
+    var backgroundPos
+
+    if ($('.slide-1').offset().top <= (scroll * 1.3)){
+        backgroundPos = divider - scrollPercent;
+    } else {
+        backgroundPos = 100;
+    };
+    $('.slide-1 h3').css('background-position', `${backgroundPos}%`)
+
+    if (parseInt($('.slide-1 h3').css('background-position')) < 0) {
+        $('.slide-1 h3').css({
+            'background-image': 'none',
+            'background-color': colors.textColor
+        });
+    } else {
+        $('.slide-1 h3').css({
+            'background-color':'transparent',
+            'background-image':`linear-gradient(to right, ${colors.textColor} 50%, transparent 50%`,
+            'background-position': `${backgroundPos}%`,
+        },'slow');
+    }
+
+    // slide divs over each other
+    $('.grid-container div:not(:nth-child(4))').each(function() {
+        if ($(window).width() <= 550) {
+            slideOffset = ($(this).offset().top + $(this).height()) * 0.8
+        } else {
+            slideOffset = $(this).offset().top
+        }
+
+        if (scroll >= slideOffset) {
+            $(this).addClass('sticky')
+        } else if (scroll < slideOffset) {
+            $(this).removeClass('sticky')
+        }
+    });
     
-    }, 100));
-}
+
+}, 100));
+
   
   
 //-----------------------------------------------timer--------------------------------------------//
