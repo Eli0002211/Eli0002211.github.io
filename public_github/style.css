@@ -678,7 +678,7 @@ footer div div a:hover:nth-child(n+2)::after {
         padding-right: 5px;
     }
     .navbar {
-        top: 10px;
+        top: 0px;
     }
     
 }
