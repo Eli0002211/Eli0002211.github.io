@@ -36,6 +36,10 @@ body {
     flex-direction: column;
 }
 
+html, body {
+    overflow: auto;
+}
+
 .hide {
     display: none;
 }
