@@ -180,29 +180,18 @@ function debounce(func, wait, immediate) {
     };
 }
 
-let startY = 0;
-$(window).on('touchstart', function(e) {
-    startY = e.originalEvent.touches[0].pageY;
-});
-$(window).on('touchmove', function(e) {
-    let currentY = e.originalEvent.touches[0].pageY;
-    if (currentY < startY) {
-        // User is scrolling down
-        $(window).scrollTop($(window).scrollTop() + (startY - currentY));
-    }
-    startY = currentY;
-});
-
-$(window).scroll(debounce(function() {
+function scroller() {
     let colors = checkDarkMode();
     var scroll = $(window).scrollTop();
-    
+
+    // $('.fixed-div').css('top', scroll + 'px');
+
     //fill colour of navbar
     if (scroll > $('video').height()) {
         $("nav").animate({
             backgroundColor: colors.bgColor
         });
-    } else {
+    } else { 
         $("nav").animate({
             backgroundColor: 'transparent'
         });
@@ -247,9 +236,11 @@ $(window).scroll(debounce(function() {
             $(this).removeClass('sticky')
         }
     });
-    
+};
 
-}, 100));
+$(window).on('touchmove', debounce(scroller, 100));
+
+$(window).scroll(debounce(scroller, 100));
 
   
   
