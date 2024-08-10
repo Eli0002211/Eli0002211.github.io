@@ -244,6 +244,7 @@ nav button:hover {
     z-index: 2;
     width: 100vw;
     top: -10px;
+    transform: translateZ(0);
 }
 /* ---------------------------------------------header-------------------------------------- */
 .video-header {
