@@ -5,6 +5,7 @@ function devTool(){
 $(document).ready(devTool);
 $(window).resize(devTool);
 $(window).scroll(devTool);
+$(window).on('touchmove'(devTool);
 
 //-------------------------------------------Get Media Size---------------------------------------//
 /* SmartPhone Size (0-450px) */
@@ -221,7 +222,7 @@ function debounce(func, wait, immediate) {
 }
 
 
-$(window).scroll(debounce(function() {
+$(window).on('touchmove'(debounce(function() {
     let colors = checkDarkMode();
     var scroll = $(window).scrollTop();
 
@@ -279,7 +280,7 @@ $(window).scroll(debounce(function() {
     });
     
 
-}, 100));
+}, 100)));
   
 //-----------------------------------------------timer--------------------------------------------//
 $(document).ready(function () {
