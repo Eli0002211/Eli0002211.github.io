@@ -269,12 +269,8 @@ $(window).scroll(debounce(function() {
 
     // slide divs over each other
     $('.grid-container div:not(:nth-child(4))').each(function() {
-        if ($(window).width() <= 550) {
-            slideOffset = ($(this).offset().top + $(this).height()) * 0.8
-        } else {
-            slideOffset = $(this).offset().top
-        }
-
+        slideOffset = $(this).offset().top
+        
         if (scroll >= slideOffset) {
             $(this).addClass('sticky')
         } else if (scroll < slideOffset) {
