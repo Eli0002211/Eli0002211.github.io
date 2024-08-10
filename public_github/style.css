@@ -31,7 +31,7 @@ html {
 }
 body {
     font-family: 'Futura PT';
-    overflow-x: hidden;
+/*     overflow-x: hidden; */
     display: flex;
     flex-direction: column;
 }
@@ -503,7 +503,7 @@ footer div div a:hover:nth-child(n+2)::after {
 .scroll-img img {
     max-height: 100px;
     z-index: -3;
-    overflow: hidden;
+/*     overflow: hidden; */
     position: absolute;
     top: -90px;
      /* Starting position */
