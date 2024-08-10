@@ -186,6 +186,8 @@ $(window).scroll(debounce(function() {
     let colors = checkDarkMode();
     var scroll = $(window).scrollTop();
 
+    $('.fixed-div').css('top', scroll + 'px'); //test
+    
     //fill colour of navbar
     if (scroll > $('video').height()) {
         $("nav").animate({
