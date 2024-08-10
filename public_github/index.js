@@ -6,28 +6,6 @@ $(document).ready(devTool);
 $(window).resize(devTool);
 $(window).scroll(devTool);
 
-
-//-------------------------------------------Get Media Size---------------------------------------//
-/* SmartPhone Size (0-450px) */
-/* Tablet Size (451-1000px) */
-/* Laptop Size (1001-1500px) */
-/* Dektop Size (1500px-2000px) */
-
-// function mediaQueryWidth(){
-//     if (window.matchMedia('(max-width: 400px)').matches) {
-//         return 'phone';
-//     } else if (window.matchMedia('((min-width: 401px) and (max-width: 600px))').matches) {
-//         return 'tablet';
-//     } else if (window.matchMedia('((min-width: 601px) and (max-width: 850px))').matches){
-//         return 'big tablet'
-//     } else if (window.matchMedia('((min-width: 851px) and (max-width: 1000px))').matches){
-//         return 'small laptop'
-//     } else if (window.matchMedia('((min-width: 1001px) and (max-width: 1500px))').matches) {
-//         return 'laptop';
-//     } else if (window.matchMedia('((min-width: 1501px) and (max-width: 2000px))').matches) {
-//         return 'desktop';
-//     }
-// };
 //--------------------------------------------Dark Mode-------------------------------------------//
 //check if dark mode is on
 function checkDarkMode() {
@@ -80,25 +58,6 @@ function getHiddenElementHeight(selector) {
 
     return height; 
 }
-// ------------------------dynamic positioning of footer-------------------------------//
-// function adjustFooter() {
-//     var fadeDiv = $('.fade-in');
-//     var fadeBottom = fadeDiv.offset().top + fadeDiv.outerHeight();
-//     var footer = $('.index-footer');
-//     var footerTop = footer.offset().top;
-
-//     footer.css('top', 4800 - (footerTop - fadeBottom));
-//     if (footer.css('top') > 4800) {
-//         footer.css('top', 4800)
-//     };
-// };
-
-// $(document).ready(function() {
-//     adjustFooter();
-// });
-// $(window).resize(function() {
-//     adjustFooter();
-// });
 
 // ---------------------------------------Video Header Animations---------------------------------//
 $(".header h1 div").height($(".header h1").height());
@@ -222,65 +181,66 @@ function debounce(func, wait, immediate) {
 }
 
 
-$(window).scroll(debounce(function() {
-    let colors = checkDarkMode();
-    var scroll = $(window).scrollTop();
-
-    //fill colour of navbar
-    if (scroll > $('video').height()) {
-        $("nav").animate({
-            backgroundColor: colors.bgColor
-        });
-    } else {
-        $("nav").animate({
-            backgroundColor: 'transparent'
-        });
-    };
-
-    // animate opacity change of features on slide 1
-    // var opacity = scroll /1000
-    // $('.slide-1 div ul li').animate({
-    //     opacity: opacity
-    // },50);
-
-    //animate fill outlined text
-    var divider = parseInt($('.slide-1 h3').width()) / 30;
-    var scrollPercent = (scroll / ($(document).height() - $(window).height()) * 100);
-    var backgroundPos
-
-    if ($('.slide-1').offset().top <= (scroll * 1.3)){
-        backgroundPos = divider - scrollPercent;
-    } else {
-        backgroundPos = 100;
-    };
-    $('.slide-1 h3').css('background-position', `${backgroundPos}%`)
-
-    if (parseInt($('.slide-1 h3').css('background-position')) < 0) {
-        $('.slide-1 h3').css({
-            'background-image': 'none',
-            'background-color': colors.textColor
-        });
-    } else {
-        $('.slide-1 h3').css({
-            'background-color':'transparent',
-            'background-image':`linear-gradient(to right, ${colors.textColor} 50%, transparent 50%`,
-            'background-position': `${backgroundPos}%`,
-        },'slow');
-    }
-
-    // slide divs over each other
-    $('.grid-container div:not(:nth-child(4))').each(function() {
-        slideOffset = $(this).offset().top
-        
-        if (scroll >= slideOffset) {
-            $(this).addClass('sticky')
-        } else if (scroll < slideOffset) {
-            $(this).removeClass('sticky')
-        }
-    });
+if (window.matchMedia('(min-width: 600px)').matches) {
+    $(window).scroll(debounce(function() {
+        let colors = checkDarkMode();
+        var scroll = $(window).scrollTop();
     
-
-}, 100));
+        //fill colour of navbar
+        if (scroll > $('video').height()) {
+            $("nav").animate({
+                backgroundColor: colors.bgColor
+            });
+        } else {
+            $("nav").animate({
+                backgroundColor: 'transparent'
+            });
+        };
+    
+        //animate fill outlined text
+        var divider = parseInt($('.slide-1 h3').width()) / 30;
+        var scrollPercent = (scroll / ($(document).height() - $(window).height()) * 100);
+        var backgroundPos
+    
+        if ($('.slide-1').offset().top <= (scroll * 1.3)){
+            backgroundPos = divider - scrollPercent;
+        } else {
+            backgroundPos = 100;
+        };
+        $('.slide-1 h3').css('background-position', `${backgroundPos}%`)
+    
+        if (parseInt($('.slide-1 h3').css('background-position')) < 0) {
+            $('.slide-1 h3').css({
+                'background-image': 'none',
+                'background-color': colors.textColor
+            });
+        } else {
+            $('.slide-1 h3').css({
+                'background-color':'transparent',
+                'background-image':`linear-gradient(to right, ${colors.textColor} 50%, transparent 50%`,
+                'background-position': `${backgroundPos}%`,
+            },'slow');
+        }
+    
+        // slide divs over each other
+        $('.grid-container div:not(:nth-child(4))').each(function() {
+            if ($(window).width() <= 550) {
+                slideOffset = ($(this).offset().top + $(this).height()) * 0.8
+            } else {
+                slideOffset = $(this).offset().top
+            }
+    
+            if (scroll >= slideOffset) {
+                $(this).addClass('sticky')
+            } else if (scroll < slideOffset) {
+                $(this).removeClass('sticky')
+            }
+        });
+        
+    
+    }, 100));
+}
+  
   
 //-----------------------------------------------timer--------------------------------------------//
 $(document).ready(function () {
