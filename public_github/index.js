@@ -5,7 +5,7 @@ function devTool(){
 $(document).ready(devTool);
 $(window).resize(devTool);
 $(window).scroll(devTool);
-$(window).on('touchmove'(devTool);
+
 
 //-------------------------------------------Get Media Size---------------------------------------//
 /* SmartPhone Size (0-450px) */
