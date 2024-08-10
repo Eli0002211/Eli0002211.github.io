@@ -360,6 +360,7 @@ video {
     left: 80vw;
     top: 75vh;
     z-index: 1;
+    transform: translateZ(0)
 }
 .dark-mode-div button {
     border-radius: 50%;
@@ -547,6 +548,7 @@ footer div div a:hover:nth-child(n+2)::after {
     border: none;
     border-radius: 20px;
     z-index: 9999;
+    transform: translateZ(0)
 }
 
 .chatbot-button-div {
@@ -554,6 +556,7 @@ footer div div a:hover:nth-child(n+2)::after {
     left: 80vw;
     top: 85vh;
     z-index: 2;
+    transform: translateZ(0)
 }
 .chatbot-button-div button {
     background-color: #963CBD;
