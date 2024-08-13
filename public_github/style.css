@@ -20,7 +20,7 @@
 } */
 html {
     background-color: white;
-    max-width:   100%;
+    max-width: 100%;
 }
 .policy-bg {
     position: absolute;
@@ -31,7 +31,7 @@ html {
 }
 body {
     font-family: 'Futura PT';
-/*     overflow-x: hidden; */
+    /* overflow-x: hidden; */
     display: flex;
     flex-direction: column;
 }
@@ -240,7 +240,7 @@ nav button:hover {
     z-index: 2;
     width: 100vw;
     top: -10px;
-    transform: translateZ(0);
+    transform: translateY(0);
 }
 /* ---------------------------------------------header-------------------------------------- */
 .video-header {
@@ -357,11 +357,12 @@ video {
 
 /* --------------------------------------------dark-mode------------------------------------ */
 .dark-mode-div {
+    display: none;
     position: fixed;
     left: 80vw;
     top: 75vh;
     z-index: 1;
-    transform: translateZ(0)
+    transform: translateZ(0);
 }
 .dark-mode-div button {
     border-radius: 50%;
@@ -421,7 +422,7 @@ footer div ul {
     max-width: 50vw;
     font-size: 16px;
     gap: 20px;
-    top: 45px;
+    top: 50px;
 }
 
 footer div div {
@@ -429,7 +430,7 @@ footer div div {
     flex-direction: column;
     margin: auto;
     padding-right: 20px;
-    top: 20px;
+    top: 50px;
 }
 footer div {
     display: flex;
@@ -446,7 +447,7 @@ footer div div a{
     position: relative;
 }
   
-footer div div a:after {
+footer div div *:after {
 content: '';
 position: absolute;
 width: 0;
@@ -476,6 +477,13 @@ footer div div a:hover:nth-child(n+2)::after {
     bottom: 0px;
     font-size: 0.5rem;
 }
+.mobile-only button {
+    background-color: #963CBD;
+    border: none;
+}
+.mobile-only button svg:hover {
+    fill: #000;
+}
 
 /* -------------------------------------marquee------------------------------------- */
 .scroll-img img:nth-child(1) {
@@ -503,7 +511,7 @@ footer div div a:hover:nth-child(n+2)::after {
 .scroll-img img {
     max-height: 100px;
     z-index: -3;
-/*     overflow: hidden; */
+    /* overflow: hidden; */
     position: absolute;
     top: -90px;
      /* Starting position */
@@ -689,6 +697,14 @@ footer div div a:hover:nth-child(n+2)::after {
         display: block;
     }
     .short-nav {
+        display: none;
+    }
+}
+@media(min-width:800px){
+    .dark-mode-div {
+        display: block;
+    }
+    .mobile-only {
         display: none;
     }
 }
