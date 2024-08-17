@@ -165,32 +165,6 @@ $('.fade-in ul li h4').click(function() {
     $(this).next('div').slideToggle();
 });
 
-//-----------------------------------------Policy Dropdown----------------------------------------//
-$('.policy-list ul li h4').click(function() {
-    var div = $(this).next('div'); 
-    var operator;
-    var divHeight;
-    if (div.is(':visible')) {
-        divHeight = div.height() *1.1;
-        operator = '+' 
-    } else {
-        divHeight = getHiddenElementHeight(div) *1.1;
-        operator = '-'
-    };
-
-    $('.policy-bg, .policy-footer').animate({'bottom': `${operator}=${divHeight}`});
-
-    div.slideToggle(); 
-});
-
-//policy footer
-$('.policy-footer div div a').click(function(){
-    var index = $(this).index() + 1;
-    $('html, body').animate({
-        scrollTop: $(`.policy-list ul li:nth-child(${index}) h4`).offset().top -200
-    }, 1000);
-    $(`.policy-list ul li:nth-child(${index}) h4`).trigger('click');
-});
 
 //------------------------------------------scroll to contact form------------------------------------------//
 

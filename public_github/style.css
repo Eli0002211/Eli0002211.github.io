@@ -373,9 +373,9 @@ video {
     color: white;
 }
 
-.dark-mode-div button:hover {
+/* .dark-mode-div button:hover {
     opacity: 80%;
-}
+} */
 
 .dark-mode {
     background-color: #3C1053 !important;
@@ -481,7 +481,7 @@ footer div div a:hover:nth-child(n+2)::after {
     background-color: #963CBD;
     border: none;
 }
-.mobile-only button svg:hover {
+.mobile-only button svg:hover, .dark-mode-div button svg:hover, .chatbot-button-div button svg:hover {
     fill: #000;
 }
 
@@ -576,9 +576,7 @@ footer div div a:hover:nth-child(n+2)::after {
     height: 60px;
 
 }
-.chatbot-button-div button:hover {
-    opacity: 80%;
-}
+
 .chatbot-button-div div button {
     color: #963CBD;
     background-color: white;
