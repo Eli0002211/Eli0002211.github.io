@@ -458,10 +458,7 @@ left: 0;
 transition: width .3s;
 }
   
-footer div div a:hover:nth-child(1)::after {
-    width: 40%;
-}
-footer div div a:hover:nth-child(n+2)::after {
+footer div div a:hover::after {
     width: 100%;
 }
   
